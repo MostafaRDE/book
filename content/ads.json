@@ -1,0 +1,85 @@
+{
+  "creatives": {
+    "placeholder-sidebar": {
+      "type": "custom",
+      "label": { "en": "Sponsored", "fa": "تبلیغ" },
+      "desktop": {
+        "title": { "en": "mostafaeffati.com", "fa": "mostafaeffati.com" },
+        "description": {
+          "en": "Projects, writing, and tools — visit the main site.",
+          "fa": "پروژه‌ها، نوشته‌ها و ابزارها — سر بزن به سایت اصلی."
+        },
+        "href": "https://mostafaeffati.com",
+        "image": null
+      },
+      "mobile": {
+        "title": { "en": "mostafaeffati.com", "fa": "mostafaeffati.com" },
+        "description": {
+          "en": "Tap to open the main site.",
+          "fa": "برای باز کردن سایت اصلی بزن."
+        },
+        "href": "https://mostafaeffati.com",
+        "image": null
+      }
+    },
+    "placeholder-in-content": {
+      "type": "custom",
+      "label": { "en": "Sponsored", "fa": "تبلیغ" },
+      "desktop": {
+        "title": { "en": "Built by Mostafa Effati", "fa": "از طرف مصطفی عفتی" },
+        "description": {
+          "en": "Demo in-content ad — edit content/ads.json or replace this marker in markdown.",
+          "fa": "نمونه تبلیغ درون متن — content/ads.json یا مارکر مارک‌داون را عوض کن."
+        },
+        "href": "https://mostafaeffati.com",
+        "image": null
+      },
+      "mobile": {
+        "title": { "en": "In-content placement", "fa": "تبلیغ درون محتوا" },
+        "description": {
+          "en": "Responsive in-content ad",
+          "fa": "تبلیغ واکنش‌گرا درون متن"
+        },
+        "href": "https://mostafaeffati.com",
+        "image": null
+      }
+    }
+  },
+  "placements": [
+    {
+      "id": "sidebar-reading",
+      "slot": "sidebar",
+      "creative": "placeholder-sidebar",
+      "enabled": true,
+      "pages": ["book"],
+      "locales": ["en", "fa"]
+    },
+    {
+      "id": "book-after-intro",
+      "slot": "book-section",
+      "section": "after-intro",
+      "creative": "placeholder-in-content",
+      "enabled": false,
+      "pages": ["book"],
+      "locales": ["en", "fa"]
+    },
+    {
+      "id": "book-before-contents",
+      "slot": "book-section",
+      "section": "before-contents",
+      "creative": "placeholder-in-content",
+      "enabled": true,
+      "pages": ["book"],
+      "locales": ["en", "fa"]
+    },
+    {
+      "id": "in-content-default",
+      "slot": "in-content",
+      "creative": "placeholder-in-content",
+      "enabled": true,
+      "pages": ["chapter", "book"],
+      "locales": ["en", "fa"],
+      "marker": "in-content-1"
+    }
+  ]
+}

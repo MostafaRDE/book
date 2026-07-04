@@ -1,0 +1,81 @@
+# mostafa-effati-book — LLM context
+
+> Personal markdown library at https://book.mostafaeffati.com
+> Author: Mostafa Effati
+
+## Stack
+
+- Next.js 16 App Router, React 19, TypeScript
+- Tailwind v4, shadcn/ui (base-nova)
+- Content: gray-matter + markdown files in `content/`
+- Client: TanStack Query, Zustand (locale, sidebar, last-read)
+- Diagrams: mermaid (dynamic import)
+- i18n: URL-based — EN at `/`, FA at `/fa/`
+
+## Key paths
+
+| Path | Purpose |
+|------|---------|
+| `content/books/{slug}/book.json` | Book metadata (localized title/description) |
+| `content/books/{slug}/chapters/*.md` | Flat book chapters |
+| `content/books/{slug}/parts/{part}/*.md` | Part chapters |
+| `*.fa.md` | Persian body overlay (same slug as `.md`) |
+| `content/ads.json` | Ad placements and creatives |
+| `content/site.json` | Site title/description (en/fa) |
+| `lib/content/get-content.ts` | All content loaders (accept `locale`) |
+| `lib/i18n/messages.ts` | UI strings en/fa |
+| `lib/i18n/routing.ts` | `/fa` prefix helpers |
+| `lib/ads/get-ads.ts` | Resolve ads for page/marker |
+| `components/pages/*-page-view.tsx` | Shared page renderers |
+| `app/fa/**` | Persian routes (mirror of English) |
+
+## URL rules
+
+- English: `/`, `/books/{book}`, `/books/{book}/{chapter}`
+- Persian: `/fa`, `/fa/books/{book}`, `/fa/books/{book}/{chapter}`
+- Locale toggle navigates between mirrored URLs
+- FA chapter without `.fa.md` → translation fallback (no English body on FA URL)
+
+## Content conventions
+
+- Frontmatter `title`/`description`: string OR `{ en, fa }`
+- Persian translation file: `{slug}.fa.md` next to `{slug}.md`
+- In-content ad marker: `<!-- ad:MARKER_ID -->` matching `content/ads.json`
+- Images: `/images/...` in `public/`
+- Mermaid: fenced code block `mermaid`
+
+## Fonts
+
+- EN body: Geist; EN headings: Instrument Serif
+- FA body: Vazirmatn; FA headings: Gulzar (`--font-heading-fa`)
+
+## SEO
+
+- `app/sitemap.ts`, `app/robots.ts`
+- `lib/seo/metadata.ts` — canonical + hreflang per page
+- JSON-LD: WebSite, Book, Article, BreadcrumbList
+- See `I18N-AND-SEO.md` for bilingual strategy
+
+## Docs for humans
+
+- `CONTENT.md` — how to add books/chapters/translations
+- `ADS.md` — ad configuration
+- `I18N-AND-SEO.md` — locale/SEO decisions
+
+## Commands
+
+```bash
+pnpm dev
+pnpm build
+```
+
+## Sample FA content
+
+- `content/books/mostafa-effati/parts/engineering/introduction.fa.md`
+
+## When editing
+
+- Pass `locale` to `getBookBySlug`, `getChapter`, `getAllBooks`
+- Client links: use `useLocalizedPaths()` not raw `bookPath()`
+- Wrap chapter body with `ContentWithAds` when ads needed
+- Do not show English markdown on `/fa/` URLs without translation

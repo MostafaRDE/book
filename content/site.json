@@ -1,0 +1,13 @@
+{
+  "title": {
+    "en": "Mostafa Effati — Library",
+    "fa": "مصطفی عفتی — کتابخانه"
+  },
+  "description": {
+    "en": "A personal library of books, essays, and field notes — engineering, letters, and quiet reflections.",
+    "fa": "کتابخانه شخصی از کتاب‌ها، مقالات و یادداشت‌های میدانی — فنی، عاشقانه و تأملی."
+  },
+  "author": "Mostafa Effati",
+  "siteUrl": "https://book.mostafaeffati.com",
+  "defaultLocale": "en"
+}

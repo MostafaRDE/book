@@ -1,0 +1,11 @@
+{
+  "title": {
+    "en": "Engineering",
+    "fa": "مهندسی"
+  },
+  "description": {
+    "en": "Architecture, tooling, and craft.",
+    "fa": "معماری، ابزارها و مهارت فنی."
+  },
+  "order": 1
+}

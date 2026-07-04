@@ -1,0 +1,14 @@
+{
+  "title": {
+    "en": "Mostafa Effati",
+    "fa": "مصطفی عفتی"
+  },
+  "description": {
+    "en": "My collected writings — technical craft, personal letters, and reflections. One voice, many rooms.",
+    "fa": "نوشته‌های جمع‌آوری‌شده — فنی، عاشقانه و تأملی. یک صدا، چند اتاق."
+  },
+  "order": 1,
+  "featured": true,
+  "tags": ["collected", "personal"],
+  "published": true
+}
